@@ -164,16 +164,18 @@ let array8 = [{
         hobby: 'football',
     }
 ];
-let array9 = [];
-mean(array8);
-function mean () {
-    for (const array8Element of array8) {
+
+let aaa = mean(array8);
+console.log(aaa)
+
+function mean (arr) {
+    let array9 = [];
+    for (const array8Element of arr) {
         for (const a in array8Element) {
+
             console.log(array8Element[a]);
             array9.push(array8Element[a])
         }
     }
+    return array9;
 }
-mean ();
-console.log(array9);
-
