@@ -27,7 +27,7 @@ let clients = [anna, maxim, irana, mira, mariana, ivan, serg, vova];
 //     return a.order.length - b.order.length
 // })
 
-let sort = clients.sort((a,b) => a.order.length - b.order.length)
+let sort = clients.sort((a, b) => a.order.length - b.order.length)
 console.log(sort);
 
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -37,7 +37,7 @@ console.log(sort);
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
 
-function Car (model, manufacturer, year, maxSpeed, volumeEngine, conductor, drive, info, increaseMaxSpeed,changeYear,addDriver ) {
+function Car(model, manufacturer, year, maxSpeed, volumeEngine, conductor, drive, info, increaseMaxSpeed, changeYear, addDriver) {
     this.model = model;
     this.manufacturer = manufacturer;
     this.year = year;
@@ -47,12 +47,21 @@ function Car (model, manufacturer, year, maxSpeed, volumeEngine, conductor, driv
     this.drive = function () {
         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
     }
-    this.info = function () {console.log(`model: ${this.model}; manufacturer: ${this.manufacturer}; year: ${this.year}; maxSpeed: ${this.maxSpeed}; volumeEngine: ${this.volumeEngine}`)};
-    this.increaseMaxSpeed = function (newSpeed) {console.log (`new speed: ${this.maxSpeed += newSpeed}`)};
-    this.changeYear = function (newValue) {console.log('new value - this.year = newValue')};
-    this.addDriver = function (driver) {this.conductor = driver};
+    this.info = function () {
+        console.log(`model: ${this.model}; manufacturer: ${this.manufacturer}; year: ${this.year}; maxSpeed: ${this.maxSpeed}; volumeEngine: ${this.volumeEngine}`)
+    };
+    this.increaseMaxSpeed = function (newSpeed) {
+        console.log(`new speed: ${this.maxSpeed += newSpeed}`)
+    };
+    this.changeYear = function (newValue) {
+        console.log('new value - this.year = newValue')
+    };
+    this.addDriver = function (driver) {
+        this.conductor = driver
+    };
 }
-let car1 = new Car ('BMW', 'Japan', 2020, 220, 40, );
+
+let car1 = new Car('BMW', 'Japan', 2020, 220, 40,);
 car1.increaseMaxSpeed(20);
 car1.changeYear(2001);
 car1.increaseMaxSpeed(30);
@@ -98,29 +107,36 @@ car1.info()
 // //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 // //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 //
-// class Cinderella {
-//    constructor( name, age, footSize) {
-//        this.name = name;
-//        this.age = age;
-//        this.footSize = footSize;
-//    }
-// }
-// let Cinder1 = new Cinderella(Anna, 20, 37);
-// let Cinder2 = new Cinderella(Mara, 23, 39);
-// let Cinder3 = new Cinderella(Saara, 70, 27);
-// let Cinder4 = new Cinderella(Hanna, 40, 67);
-// let Cinder5 = new Cinderella(Mata, 29, 367);
-// let Cinder6 = new Cinderella(Sata, 10, 6);
-// let Cinder7 = new Cinderella(Mila, 44, 30);
-// let Cinder8 = new Cinderella(Nina, 31, 41);
-// let Cinder9 = new Cinderella(Fila, 24, 32);
-// let Cinder10 = new Cinderella(Gita, 19, 93);
-//
-// let cinderellas = [Cinder1, Cinder2, Cinder3, Cinder4, Cinder5, Cinder6, Cinder7, Cinder8, Cinder9, Cinder10]
-//
-// class Prince {
-//     constructor(name, age) {
-//         this.name = name;
-//         this.age = age;
-//     }
-// }
+class Cinderella {
+    constructor(name, age, footSize) {
+        this.name = name;
+        this.age = age;
+        this.footSize = footSize;
+    }
+}
+
+let Cinder1 = new Cinderella('Anna', 20, 37);
+let Cinder2 = new Cinderella('Mara', 23, 39);
+let Cinder3 = new Cinderella('Saara', 70, 27);
+let Cinder4 = new Cinderella('Hanna', 40, 67);
+let Cinder6 = new Cinderella('Sata', 10, 6);
+let Cinder7 = new Cinderella('Mila', 44, 30);
+let Cinder5 = new Cinderella('Mata', 29, 367);
+let Cinder8 = new Cinderella('Nina', 31, 41);
+let Cinder9 = new Cinderella('Fila', 24, 32);
+let Cinder10 = new Cinderella('Gita', 19, 93);
+
+let cinderellas = [Cinder1, Cinder2, Cinder3, Cinder4, Cinder5, Cinder6, Cinder7, Cinder8, Cinder9, Cinder10]
+
+class Prince extends Cinderella {
+    constructor(name, age, footSize) {
+        super(name, age, footSize);
+    }
+}
+let Prince1 = new Prince('Adrian', 25, 37);
+for (const princeElement of Prince1) {
+    if (cinderellas.footsize = Prince1.footsize) {
+        console.log('true')
+    }
+    console.log('false')
+}
