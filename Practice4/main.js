@@ -64,29 +64,34 @@ console.log(car1);
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
 
 class Car2 {
-    constructor(model, manufacturer, year, maxSpeed, volumeEngine) {
+    constructor(model, manufacturer, year, maxSpeed, volumeEngine, newSpeed, driver) {
         this.model = model;
         this.manufacturer = manufacturer;
         this.year = year;
         this.maxSpeed = maxSpeed;
         this.volumeEngine = volumeEngine;
+        this.newSpeed = newSpeed;
+        this.newValue = year;
+        this.driver = driver;
     }
 
-    drive() {
-        console.log('їдемо зі швидкістю', this.maxSpeed, 'на годину')
-    }
+    drive() {console.log('їдемо зі швидкістю', this.maxSpeed, 'на годину')}
 
-    info () {
-        console.log('model - ', this.model, ', manufacturer - ', this.manufacturer, ', year - ', this.year, ', max speed -', this.maxSpeed, ', engine volume -', this.volumeEngine )
-    }
+    info () {console.log('model - ', this.model, ', manufacturer - ', this.manufacturer, ', year - ', this.year, ', max speed -', this.maxSpeed, ', engine volume -', this.volumeEngine )}
 
+    increaseMaxSpeed () {console.log('збільшення максимальної швидкості', this.maxSpeed += this.newSpeed)}
 
+    changeYear () {console.log('значення - ', this.newValue)}
 }
 // this.info = function () {console.log(`model: ${this.model}; manufacturer: ${this.manufacturer}; year: ${this.year}; maxSpeed: ${this.maxSpeed}; volumeEngine: ${this.volumeEngine}`)};
 // this.increaseMaxSpeed = function (newSpeed) {this.maxSpeed += newSpeed};
 // this.changeYear = function (newValue) {this.year = newValue};
 // this.addDriver = function (driver) {this.conductor = driver};
 
-const car2 = new Car ('BMW', 'Japan', 2020, 220, 40);
-car1.drive();
-car1.info()
+const car2 = new Car2 ('BMW', 'Japan', 2020, 220, 40, 50,);
+car2.drive();
+car2.info();
+car2.increaseMaxSpeed();
+car2.changeYear();
+
+
