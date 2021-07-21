@@ -83,11 +83,6 @@ class Car2 {
 
     changeYear () {console.log('значення - ', this.newValue)}
 }
-// this.info = function () {console.log(`model: ${this.model}; manufacturer: ${this.manufacturer}; year: ${this.year}; maxSpeed: ${this.maxSpeed}; volumeEngine: ${this.volumeEngine}`)};
-// this.increaseMaxSpeed = function (newSpeed) {this.maxSpeed += newSpeed};
-// this.changeYear = function (newValue) {this.year = newValue};
-// this.addDriver = function (driver) {this.conductor = driver};
-
 const car2 = new Car2 ('BMW', 'Japan', 2020, 220, 40, 50,);
 car2.drive();
 car2.info();
