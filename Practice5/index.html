@@ -70,49 +70,50 @@
     }
 
     // g) отримує всі елементи 'a' та у випадку, якщо текстовий контен елементу дорівнює link3, змінює йому розмір тексту на 40 пікселів
-   let ashka2 = document.querySelector('.listElement3')
-    console.log(ashka2)
-    //
-    document.getElementsByClassName('listElement3')
+    let ashka2 = document.getElementsByTagName('a');
+    console.log(ashka2);
+    for (const a of ashka2) {
+        if (a.innerText === 'link3') {a.style.fontSize= '40px'}
+    }
 
     // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
-    let ashka3 = document.getElementsByTagName('a');
-    console.log(ashka3);
-    for (const a of ashka3) {
-        a.classList.add('XXX')
-        a.innerText = 'XXX'
-    }
+    //     let ashka3 = document.getElementsByTagName('a');
+    //     console.log(ashka3);
+    //     for (const a of ashka3) {
+    //         a.classList.add('XXX')
+    //         a.innerText = 'XXX'
+    //     }
 
-    // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
-   let subHeaderElements =  document.getElementsByClassName('sub-header');
-   let  newCol = prompt("Please, choose one colour");
-    for (const subHeaderElement of subHeaderElements) {
-        subHeaderElement.style.background = newCol;
-    }
-    // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
-    let subHeader = document.getElementsByClassName('sub-header')
-    let color = prompt('Color of content 2')
-    for (const content2Element of subHeader) {
-        content2Element.style.color = color;
-    }
-    // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
-    let content1 = document.getElementsByClassName('content_1');
-    let text = prompt ('write text')
-    for (const content1Element of content1) {
-        content1Element.innerText = text;
-    }
+        // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
+        let subHeaderElements = document.getElementsByClassName('sub-header');
+        let newCol = prompt("Please, choose one colour");
+        for (const subHeaderElement of subHeaderElements) {
+            subHeaderElement.style.background = newCol;
+        }
+        // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
+        let subHeader = document.getElementsByClassName('sub-header')
+        let color = prompt('Color of content 2')
+        for (const content2Element of subHeader) {
+            content2Element.style.color = color;
+        }
+        // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
+        let content1 = document.getElementsByClassName('content_1');
+        let text = prompt('write text')
+        for (const content1Element of content1) {
+            content1Element.innerText = text;
+        }
 
-    // l) отримати елементи p та змінити їм padding на 20px
-    let peshka = document.getElementsByTagName('p');
-    for (const p of peshka) {
-        p.style.padding = '20px'
-    }
+        // l) отримати елементи p та змінити їм padding на 20px
+        let peshka = document.getElementsByTagName('p');
+        for (const p of peshka) {
+            p.style.padding = '20px'
+        }
 
-    // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year)
-    let text2Elements = document.getElementsByClassName('text2');
-    for (const text2Element of text2Elements) {
-        text2Element.innerText = 'mon-year';
-    }
+        // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year)
+        let text2Elements = document.getElementsByClassName('text2');
+        for (const text2Element of text2Elements) {
+            text2Element.innerText = 'mon-year';
+        }
 
 </script>
 
