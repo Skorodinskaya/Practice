@@ -109,7 +109,10 @@
     }
 
     // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year)
-    document.getElementsByClassName('text2')
+    let text2Elements = document.getElementsByClassName('text2');
+    for (const text2Element of text2Elements) {
+        text2Element.innerText = 'mon-year';
+    }
 
 </script>
 
