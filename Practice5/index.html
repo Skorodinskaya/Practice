@@ -29,9 +29,89 @@
         possimus quam rerum sequi temporibus tenetur! Accusantium ad commodi eveniet excepturi laboriosam quis
         quisquam sint temporibus.</p>
 </div>
-
 <script>
+    // a) змінює колір тексту елемнту з ід main_header на назву групи в якій ви вчитесь (mon-year)
+    let header = document.getElementById('main_header');
+    header.innerText = 'mon-year';
+    console.log(header);
+    // b) робить шириниу елементу ul 400px
+   let ulka =  document.getElementsByTagName('ul');
+    console.log(ulka);
+    for (const ul of ulka) {
+        ul.style.width = '400px';
+    }
+
+    // c) робить шириниу всіх елементів з класом linkList шириною 50%
+    let linkListElements = document.getElementsByClassName('linkList');
+    console.log(linkListElements);
+    for (const linkListElement of linkListElements) {
+        linkListElement.style.width = '50%';
+    }
+
+
+    // d) отримує текст який зберігається в елементі з класом listElement2
+   let listElement2Item = document.getElementsByClassName('listElement2');
+    for (const listElement2ItemElement of listElement2Item) {
+        console.log(listElement2ItemElement);
+    }
+
+    // e) отримує всі елементи li та змінює ім колір фону на сірий
+   let lishka =  document.getElementsByTagName('li');
+    for (const li of lishka) {
+        li.style.background = 'grey';
+    }
+
+    // f) отримує всі елементи 'a' та додає їм клас anchor
+
+      let ashka = document.getElementsByTagName('a');
+      console.log(ashka);
+    for (const a of ashka) {
+        a.classList.add('anchor')
+    }
+
+    // g) отримує всі елементи 'a' та у випадку, якщо текстовий контен елементу дорівнює link3, змінює йому розмір тексту на 40 пікселів
+   let ashka2 = document.querySelector('.listElement3')
+    console.log(ashka2)
+    //
+    document.getElementsByClassName('listElement3')
+
+    // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
+    let ashka3 = document.getElementsByTagName('a');
+    console.log(ashka3);
+    for (const a of ashka3) {
+        a.classList.add('XXX')
+        a.innerText = 'XXX'
+    }
+
+    // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
+   let subHeaderElements =  document.getElementsByClassName('sub-header');
+   let  newCol = prompt("Please, choose one colour");
+    for (const subHeaderElement of subHeaderElements) {
+        subHeaderElement.style.background = newCol;
+    }
+    // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
+    let subHeader = document.getElementsByClassName('sub-header')
+    let color = prompt('Color of content 2')
+    for (const content2Element of subHeader) {
+        content2Element.style.color = color;
+    }
+    // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
+    let content1 = document.getElementsByClassName('content_1');
+    let text = prompt ('write text')
+    for (const content1Element of content1) {
+        content1Element.innerText = text;
+    }
+
+    // l) отримати елементи p та змінити їм padding на 20px
+    let peshka = document.getElementsByTagName('p');
+    for (const p of peshka) {
+        p.style.padding = '20px'
+    }
+
+    // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year)
+    document.getElementsByClassName('text2')
 
 </script>
+
 </body>
 </html>
