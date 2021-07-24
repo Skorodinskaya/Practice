@@ -31,7 +31,45 @@ let sort = clients.sort((a, b) => a.order.length - b.order.length)
 console.log(sort);
 
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+function Car (model, manufacturer, year, maxSpeed, volumeEngine) {
+    this.model = model;
+    this.manufacturer = manufacturer;
+    this.year = year;
+    this.maxSpeed = maxSpeed;
+    this.volumeEngine = volumeEngine;
+    this.driver = {};
 
+    this.drive = function () {console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)}
+
+    this.info = function () {
+        console.log(`Model - ${this.model}`)
+        console.log(`Manufacturer - ${this.manufacturer}`)
+        console.log(`year - ${this.year}`)
+        console.log(`maxSpeed - ${this.maxSpeed}`)
+        console.log(`volumeEngine - ${this.volumeEngine}`)
+        console.log(`driver - ${this.driver.name} - his age - ${this.driver.age}`)
+
+    }
+
+
+
+    this.increaseMaxSpeed = function (newSpeed = 0) {this.maxSpeed = this.maxSpeed + newSpeed}
+
+    this.changeYear = function (newValue) {this.year = newValue}
+
+    this.addDriver = function (driver) {
+        this.driver = driver;
+    }
+}
+
+let car = new Car ('mercedes', 'England', 2013, 180, 5)
+
+car.drive ();
+car.info ();
+car.increaseMaxSpeed(20);
+car.changeYear(2021);
+car.addDriver({name: 'Andrii', age: 21})
+car.info()
 // - (Те саме, тільки через клас)
 // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
 // -- drive () - яка виводить в консоль "їдемо зі швидкістю {максимальна швидкість} на годину"
