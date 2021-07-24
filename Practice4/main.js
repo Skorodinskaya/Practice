@@ -102,23 +102,28 @@ let Cinder8 = new Cinderella('Nina', 31, 41);
 let Cinder9 = new Cinderella('Fila', 24, 32);
 let Cinder10 = new Cinderella('Gita', 19, 93);
 
-let cinderellas = [Cinder1, Cinder2, Cinder3, Cinder4, Cinder5, Cinder6, Cinder7, Cinder8, Cinder9, Cinder10]
+let cinderellas = [Cinder1, Cinder2, Cinder3, Cinder4, Cinder5, Cinder6, Cinder7, Cinder8, Cinder9, Cinder10];
+let prince = {name: 'Adrian', age: 25, shoe: 37}
 for (const cinderella of cinderellas) {
-    console.log(cinderella);
-}
-
-class Prince extends Cinderella {
-    constructor(name, age, footSize) {
-        super(name, age, footSize);
-    }
-}
-let Prince1 = new Prince('Adrian', 25, 37);
-console.log(Prince1);
-for (const cinderella of cinderellas) {
-    if (Prince1.footSize === cinderella.footSize) {
+    if (prince.shoe === cinderella.footSize) {
         console.log(cinderella);
     }
 }
 
-let findCinder = cinderellas.find(cinderella => cinderella.footSize === Prince1.footSize);
-console.log(findCinder);
+
+
+// class Prince extends Cinderella {
+//     constructor(name, age, footSize) {
+//         super(name, age, footSize);
+//     }
+// }
+// let Prince1 = new Prince('Adrian', 25, 37);
+// console.log(Prince1);
+// for (const cinderella of cinderellas) {
+//     if (Prince1.footSize === cinderella.footSize) {
+//         console.log(cinderella);
+//     }
+// }
+//
+// let findCinder = cinderellas.find(cinderella => cinderella.footSize === Prince1.footSize);
+// console.log(findCinder);
