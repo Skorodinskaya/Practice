@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
+    // https://jsonplaceholder.typicode.com/users
+    //     кожному елементу юзера створити кнопку, при клику на яку в окремий блок виводяться всі пости поточного юзера.
+    //     Кожному елементу post створити кнопку, при клику на яку в окремий блок виводяться всі коментарі поточного поста
+
+    fetch(' https://jsonplaceholder.typicode.com/users')
+        .then(value => value.json())
+        .then(value => users(value))
+
+
+    function users(users) {
+        let userBox = document.getElementsByClassName('user-box')[0];
+        for (const user of users) {
+            let userParagraph = document.createElement('p');
+            userParagraph.innerText = `${user.id}) ${user.name}`
+            let buttonElement = document.createElement('button');
+            buttonElement.innerText = 'posts'
+            userParagraph.append(buttonElement)
+            userBox.append(userParagraph)
+            buttonElement.onclick = () => posts(user);
+        }
+    }
+
+    function posts(user) {
+        fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
+            .then(value1 => value1.json())
+            .then(value1 => rendPosts(value1))
+    }
+
+    function rendPosts (posts) {
+        let postBox = document.getElementsByClassName('post-box')[0];
+        postBox.innerText = ''
+        for (const post of posts) {
+            let liPost = document.createElement('li');
+            liPost.innerText = post.title
+            const button = document.createElement('button');
+            button.innerText = 'show comments'
+            button.addEventListener('click', () => getComments(post.id))
+
+            postBox.append(liPost)
+            postBox.append(button)
+        }
+    }
+    //
+    //
+    function getComments(id) {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
+            .then(value2 => value2.json())
+            .then(value => {
+                // let commentBox = document.getElementsByClassName('comment-box')[0];
+                // for (const comment of value) {
+                //     let commElem = document.createElement('p');
+                //     commElem.innerText = `${comment.id}) ${comment.body}`
+                //     commentBox.append(commElem)
+                //
+                // }
+                console.log(value)
+            })
+    }
+</script>
+<body>
+<div class="user-box"></div>
+<div class="post-box"></div>
+<div class="comment-box"></div>
+</body>
+</html>
+
